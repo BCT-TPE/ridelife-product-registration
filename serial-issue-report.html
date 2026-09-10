@@ -846,6 +846,18 @@
     font-family:var(--font-body); font-weight:400; font-size:12px; line-height:16px;
     letter-spacing:0.24px; color:#58626e;
   }
+  .sign-box .sig-wm {
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-action); font-weight:800; font-size:13px; letter-spacing:2.5px;
+    text-transform:uppercase; color:rgba(17,17,17,0.12); transform:rotate(-8deg);
+    padding-bottom:34px; box-sizing:border-box;
+    pointer-events:none; white-space:nowrap; user-select:none;
+  }
+  .sign-box .sig-ink {
+    position:absolute; left:0; right:0; top:56%; transform:translateY(-44%) rotate(-3deg);
+    text-align:center; font-family:'Snell Roundhand','Savoye LET','Segoe Script','Brush Script MT',cursive;
+    font-size:36px; line-height:1; color:#1B2C7A; pointer-events:none;
+  }
 
   /* popup (63:6208) */
   .popup-overlay {
@@ -2083,11 +2095,17 @@
         <div class="form-card" style="box-shadow:none;border:none;">
           <div class="field">
             <div class="label">Your signature for confirmation</div>
-            <div class="sign-box"><div class="txt">Tap here to sign</div></div>
+            <div class="sign-box">
+              <div class="sig-wm">Giant Warranty Use Only</div>
+              <div class="sig-ink">Kevin Lin</div>
+            </div>
           </div>
           <div class="field">
             <div class="label">Retailer signature for confirmation</div>
-            <div class="sign-box"><div class="txt">Tap here to sign</div></div>
+            <div class="sign-box">
+              <div class="sig-wm">Giant Warranty Use Only</div>
+              <div class="sig-ink" style="font-size:31px; transform:translateY(-44%) rotate(-1.5deg);">David Wu</div>
+            </div>
           </div>
         </div>
       </div>
