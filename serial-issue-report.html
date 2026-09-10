@@ -2585,6 +2585,7 @@
     document.getElementById('sn-input').value = '';  /* the bad serial is resolved — start fresh */
     goTo('screen-add-product');
     showToast('Issue #' + ISSUE_NO + ' submitted successfully', 'success');
+    notifyReply();                        /* service reply lands right away in the demo */
   }
 
   /* ── QR scanner demo: dim mask + clear window; sheet reuses the hint card ── */
