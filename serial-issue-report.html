@@ -181,9 +181,10 @@
     color:rgba(255,255,255,0.65); transition:all .15s ease;
   }
   .proposal-switch .ps-opt.active { background:#fff; color:#000; }
-  #proposal-switch .ps-opt { text-align:left; }
+  #proposal-switch .ps-opt, .pf-jump .ps-opt { text-align:left; }
   #proposal-switch { width:150px; }
-  #proposal-switch .ps-sub {
+  .pf-jump { top:auto; transform:none; bottom:40px; width:150px; }
+  #proposal-switch .ps-sub, .pf-jump .ps-sub {
     font-family:var(--font-action); font-weight:800; font-size:10px; letter-spacing:1px;
     text-transform:uppercase; color:rgba(255,255,255,0.4); text-align:left; margin:4px 2px 0;
   }
@@ -1141,7 +1142,10 @@
   <div class="ps-seg">
     <div class="ps-opt ps-check" id="ps-cert" onclick="togglePfCert()"><span class="sw"><span class="knob"></span></span>認證車</div>
   </div>
-  <div class="ps-sub" style="margin-top:28px;">快速跳頁</div>
+</div>
+
+<div class="proposal-switch pf-jump" id="pf-jump">
+  <div class="ps-sub">快速跳頁</div>
   <div class="ps-seg">
     <div class="ps-opt" onclick="goTo('screen-signature')">Signature 簽名頁</div>
   </div>
@@ -2624,6 +2628,8 @@
     /* each screen shows its own case switcher, if it has one */
     var ps = document.getElementById('proposal-switch');
     if (ps) ps.classList.toggle('show', id === 'screen-product-found');
+    var pj = document.getElementById('pf-jump');
+    if (pj) pj.classList.toggle('show', id === 'screen-product-found');
     var scOpen = document.getElementById('scanner') && document.getElementById('scanner').classList.contains('show');
     var ts = document.getElementById('tips-switch');
     if (ts) ts.classList.toggle('show', id === 'screen-add-product' && !scOpen);
