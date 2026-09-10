@@ -1054,6 +1054,11 @@
   <div class="ps-label">Demo Tips</div>
   <div class="ps-seg">
     <div class="ps-opt ps-tip">
+      序號查詢成功
+      <span class="ps-tip-sub">填入正確 12 碼序號，再按 LOOK UP 進入 Product Found</span>
+      <span class="ps-try" onclick="fillGoodSerial()">Try it</span>
+    </div>
+    <div class="ps-opt ps-tip">
       查無序號
       <span class="ps-tip-sub">填入錯誤 12 碼序號，再按 LOOK UP 觸發對話框</span>
       <span class="ps-try" onclick="fillDemoSerial()">Try it</span>
@@ -2481,6 +2486,13 @@
   ];
   /* ── serial lookup demo: 111 = unknown serial → report flow ── */
   var DEMO_BAD_SN = '111122223333';   /* the tips panel fills this 12-digit dud */
+  var DEMO_GOOD_SN = '123456789012';  /* and this one looks up fine */
+  function fillGoodSerial() {
+    var inp = document.getElementById('sn-input');
+    inp.value = DEMO_GOOD_SN;
+    var sa = document.querySelector('#screen-add-product .scroll-area');
+    if (sa) sa.scrollTop = 0;
+  }
   function fillDemoSerial() {
     var inp = document.getElementById('sn-input');
     inp.value = DEMO_BAD_SN;
