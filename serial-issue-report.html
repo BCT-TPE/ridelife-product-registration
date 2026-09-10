@@ -2909,6 +2909,11 @@
     });
     scr.querySelector('.page-header .sub').textContent =
       single ? 'Confirm the product to register' : 'Select the product to register';
+    /* the certified bike leads the multi list */
+    var photoBike = document.getElementById('pf-bike');
+    var pfdBike = scr.querySelector('.pf-card.pfd-bike');
+    photoBike.style.order = ''; pfdBike.style.order = '';
+    if (!single && pfCert) (pfImgPhoto ? photoBike : pfdBike).style.order = '-1';
     /* single result is pre-confirmed; multi starts with nothing picked */
     if (single) {
       if (pfImgPhoto) {
